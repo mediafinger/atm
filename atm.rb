@@ -1,5 +1,5 @@
 # ATM by Eric Anderson for evaluation
-class Atm2
+class Atm
   def initialize(filename = 'balance.txt')
     @filename = filename
   end
@@ -40,22 +40,16 @@ class Atm2
 
   def deposit(balance)
     puts 'Please enter the amount to be deposited'
-    deposit = gets.to_f
-
-    while deposit < 0
+    while (deposit = gets.to_f) < 0
       puts 'Please enter a positive amount greater than 0 to deposit'
-      deposit = gets.to_f
     end
     balance + deposit
   end
 
   def withdraw(balance)
     puts 'Please enter the amount to be withdraw'
-    withdraw = gets.to_f
-
-    while withdraw < 0 || withdraw > balance
+    while (withdraw = gets.to_f) < 0 || withdraw > balance
       puts 'Please enter a positive amount less or equal to your balance'
-      withdraw = gets.to_f
     end
     balance - withdraw
   end
