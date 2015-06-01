@@ -14,7 +14,7 @@ class Atm
   end
 
   def menu(balance)
-    while menu_display == nil && (selection = gets.chomp.to_s.downcase) != 'q'
+    while !menu_display && (selection = gets.chomp.to_s.downcase) != 'q'
       case selection
       when 'd' then print_balance(balance = deposit(balance))
       when 'w' then print_balance(balance = withdraw(balance))
